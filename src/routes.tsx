@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import DashBoard from "./dashBoard/DashBoard"
 
 
 const RotasDoApp = () => {
@@ -12,7 +13,7 @@ const RotasDoApp = () => {
                     <h1>login</h1>
                 } />
                 <Route path="/dashboard" element={
-                    <h1>dashboard</h1>
+          <DashBoard></DashBoard>
                 } />
                 <Route path="/info" element={
                     <h1>Informações gerais</h1>

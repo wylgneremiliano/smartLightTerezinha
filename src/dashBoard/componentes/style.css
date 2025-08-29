@@ -1,0 +1,67 @@
+
+@import "tailwindcss";
+.BarraTop {
+  background-color: #292d34;
+  width: 100dvw;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+.logo {
+  width: 100px;
+}
+.BotaoLocais:hover {
+  background-color: #1f3217;
+}
+
+.BotaoLocais {
+  cursor: pointer;
+  width: auto;
+  padding: 10px;
+  background-color: #4a7537;
+  border: none;
+  color: white;
+  border-radius: 15px;
+  display: flex;
+  display: inline;
+  margin: 10px;
+}
+.containerBotaoLocais {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.containerStatusDispositivos {
+  background-color: #292d34;
+  display: flex;
+  align-items: center;
+  width: 600px;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 30px;
+  color: white;
+}
+
+.DashBoard {
+  background-color: #3e444e;
+  width: 100dvw;
+  min-height: 100dvh;
+  display:flex;
+flex-direction: column;
+  align-items: center;
+}
+h1 {
+  
+  font-size: 40px;
+}
+.verdeDefault {
+  background-color: #4a7537;
+}
+.vermelhoDefault {
+  background-color: #8e0000;
+}
+.azulDefault {
+  background-color: #244f76;
+}
