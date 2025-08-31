@@ -1,15 +1,15 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-
+import Login from "./pages/Login/login"
 
 const RotasDoApp = () => {
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={
-                    <h1>login</h1>
+                    <Login />
                 } />
                 <Route path="/login" element={
-                    <h1>login</h1>
+                    <Login />
                 } />
                 <Route path="/dashboard" element={
                     <h1>dashboard</h1>

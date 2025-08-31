@@ -18,7 +18,7 @@ function Login() {
           <input type="password" id="senha" name="senha" required />
 
 
-            <button type="submit">Enviar</button>
+            <button type="submit">Entrar</button>
 
 
       </form>
