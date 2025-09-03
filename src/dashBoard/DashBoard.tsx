@@ -1,5 +1,8 @@
+import ApiClimatologico from "./componentes/apiClimatolgico";
 import BarraTop from "./componentes/barraTop";
 import BotaoLocais from "./componentes/botaoLocais";
+import CardPesquisaDispositivo from "./componentes/cardPesquisaDispositivo";
+import CardsLigarDesligarTodosDispositivosIguais from "./componentes/cardsLigarDesligar";
 import CardStatus from "./componentes/cardStatus";
 
 const DashBoard = () => {
@@ -15,10 +18,10 @@ const DashBoard = () => {
         <BotaoLocais texto="Quadras"></BotaoLocais>
         <BotaoLocais texto="Depositos"></BotaoLocais>
       </div>
-      <div>
-        <div className="apiClimatologico">
-
-        </div>
+      <div className="flex">
+        <div>
+      <div className="apiClimatologicoEstatusDispositivos">
+      <ApiClimatologico></ApiClimatologico>
         <div className="containerStatusDispositivos">
           <CardStatus
             className="verdeDefault "
@@ -36,7 +39,14 @@ const DashBoard = () => {
             texto="Qtd.Dispositivos"
           ></CardStatus>
         </div>
-      </div>
+        </div>
+        <div className="containerLigarDesligarDispositivos">
+          <CardsLigarDesligarTodosDispositivosIguais></CardsLigarDesligarTodosDispositivosIguais>
+        </div>
+        </div>
+        <CardPesquisaDispositivo></CardPesquisaDispositivo>
+        </div>
+      
     </div>
   );
 };

@@ -1,4 +1,3 @@
-
 @import "tailwindcss";
 .BarraTop {
   background-color: #292d34;
@@ -27,6 +26,18 @@
   display: inline;
   margin: 10px;
 }
+.apiClimatologico {
+  color: #acacac;
+  width: 200px;
+  height: 210px;
+  background-color: #292d34;
+  border-radius: 15px;
+}
+.apiClimatologicoEstatusDispositivos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .containerBotaoLocais {
   display: flex;
   align-items: center;
@@ -40,21 +51,64 @@
   width: 600px;
   justify-content: space-between;
   border-radius: 10px;
-  padding: 30px;
+  padding: 20px;
   color: white;
+  margin: 10px;
+  height: 210px;
+}
+.containerLigarDesligarDispositivos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #292d34;
+  height: 257px;
+  width: 800px;
+  border-radius: 10px;
+}
+.cardUniversalDosDispositivosIguais {
+  width: 245px;
+  height: 192px;
+  background-color: #3e444e;
+  border-radius: 10px;
+}
+.cardPesquisaDispositivo{
+  width: 421px;
+  background-color: #292d34;
+  border-radius: 10px;
+  display: flex;
+  align-items: start;
+  padding: 15px;
+  flex-direction: column;
+}
+.inputPesquisa{
+  width: 300px;
+  background-color: white;
+  border-radius: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .containerStatusDispositivos {
+    display: flex;
+    justify-content: space-between;
+    height: 500px;
+    flex-direction: column;
+    width: 200px;
+  }
 }
 
 .DashBoard {
   background-color: #3e444e;
   width: 100dvw;
   min-height: 100dvh;
-  display:flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  
 }
 h1 {
-  
   font-size: 40px;
+}
+h2{
+  font-size: 24px;
 }
 .verdeDefault {
   background-color: #4a7537;
