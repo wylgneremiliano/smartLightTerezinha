@@ -1,0 +1,22 @@
+.menu {
+  width: 150px;
+  height: 83.9%;
+  background-color: #3b414a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.iconesMenu {
+  width: 70.66px;
+  height: 60.23px;
+}
+
+.icones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 45%;
+}

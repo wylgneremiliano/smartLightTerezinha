@@ -1,9 +1,11 @@
-import logo from "../../../../assets/react.svg";
+import logo from "../../../../assets/logo.png";
+import "./style.css";
+
 const Header = () => {
   return (
-    <div>
-      <img src={logo} />
-      <h1>Listagem de Dispositivos</h1>
+    <div className="header">
+      <img className="iconeHeader" width={102.4} height={108} src={logo} />
+      <h1>Listagem de dispositivos</h1>
     </div>
   );
 };
