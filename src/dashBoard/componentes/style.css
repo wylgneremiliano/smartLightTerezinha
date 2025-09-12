@@ -59,19 +59,26 @@
 .containerLigarDesligarDispositivos {
   display: flex;
   align-items: center;
-  justify-content: center;
+  
   background-color: #292d34;
   height: 257px;
-  width: 800px;
+  width: 810px;
   border-radius: 10px;
+  overflow: auto;
 }
 .cardUniversalDosDispositivosIguais {
-  width: 245px;
-  height: 192px;
+  padding: 15px;
+  width: 265px;
+  min-width:265px;
+  height: 200px;
   background-color: #3e444e;
   border-radius: 10px;
+  margin: 0 17px;
 }
-.cardPesquisaDispositivo{
+.elementosInferiores {
+  display: flex;
+}
+.cardPesquisaDispositivo {
   width: 421px;
   background-color: #292d34;
   border-radius: 10px;
@@ -80,19 +87,79 @@
   padding: 15px;
   flex-direction: column;
 }
-.inputPesquisa{
+.inputPesquisa {
   width: 300px;
   background-color: white;
   border-radius: 20px;
 }
-@media only screen and (max-width: 768px) {
+/*Para dispositivos móveis*/
+@media only screen and (max-width: 600px) {
+  .cardUniversalDosDispositivosIguais {
+    width: 200px;
+  min-width:200px;
+    height: 192px;
+    background-color: #3e444e;
+    border-radius: 10px;
+    margin: 17px;
+    padding: 20px;
+  }
+  .imagensCard {
+    width: 50px;
+  }
+  .apiClimatologico {
+    width: 300px;
+    height: 210px;
+    display: flex;
+    align-items: baseline;
+    padding: 15px;
+    background-color: #292d34;
+    border-radius: 15px;
+  }
   .containerStatusDispositivos {
     display: flex;
     justify-content: space-between;
     height: 500px;
     flex-direction: column;
-    width: 200px;
+    width: 300px;
   }
+  .inputPesquisa {
+    width: 250px;
+    background-color: white;
+    border-radius: 20px;
+    margin-top: 10px;
+  }
+  .cardPesquisaDispositivo {
+    width: 300px;
+    background-color: #292d34;
+    border-radius: 10px;
+    display: flex;
+    align-items: start;
+    padding: 15px;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  .elementosInferiores {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .apiClimatologicoEstatusDispositivos {
+    display: flex;
+    flex-direction: column;
+  }
+  .containerLigarDesligarDispositivos {
+    width: 350px;
+    overflow-x: scroll;
+    height: auto;
+    margin-left: 10px;
+    display: flex;
+ 
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
 }
 
 .DashBoard {
@@ -102,12 +169,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
 h1 {
   font-size: 40px;
 }
-h2{
+h2 {
   font-size: 24px;
 }
 .verdeDefault {
@@ -118,4 +184,7 @@ h2{
 }
 .azulDefault {
   background-color: #244f76;
+}
+.cinzaDefault {
+  color: #acacac;
 }

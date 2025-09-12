@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ApiClimatologico from "./componentes/apiClimatolgico";
 import BarraTop from "./componentes/barraTop";
 import BotaoLocais from "./componentes/botaoLocais";
@@ -6,6 +7,7 @@ import CardsLigarDesligarTodosDispositivosIguais from "./componentes/cardsLigarD
 import CardStatus from "./componentes/cardStatus";
 
 const DashBoard = () => {
+  const [dispositvos, setDispositivos] = useState<number>(10);
   return (
     <div className="DashBoard">
       <BarraTop></BarraTop>
@@ -18,7 +20,7 @@ const DashBoard = () => {
         <BotaoLocais texto="Quadras"></BotaoLocais>
         <BotaoLocais texto="Depositos"></BotaoLocais>
       </div>
-      <div className="flex">
+      <div className="elementosInferiores">
         <div>
       <div className="apiClimatologicoEstatusDispositivos">
       <ApiClimatologico></ApiClimatologico>
@@ -41,7 +43,10 @@ const DashBoard = () => {
         </div>
         </div>
         <div className="containerLigarDesligarDispositivos">
-          <CardsLigarDesligarTodosDispositivosIguais></CardsLigarDesligarTodosDispositivosIguais>
+          {
+            Array.from({length: dispositvos}).map((_,index)=>(
+              <CardsLigarDesligarTodosDispositivosIguais key={index}></CardsLigarDesligarTodosDispositivosIguais>
+            ))}
         </div>
         </div>
         <CardPesquisaDispositivo></CardPesquisaDispositivo>

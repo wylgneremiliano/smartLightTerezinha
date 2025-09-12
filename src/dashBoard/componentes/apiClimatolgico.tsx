@@ -1,5 +1,5 @@
 import "./style.css";
-
+import imgClima from "../../assets/dashboard/cloud.png"
 
 const ApiClimatologico = () => {
   return (
@@ -7,6 +7,7 @@ const ApiClimatologico = () => {
         <div className="">
       <h2>Lagoa Grande</h2>
       <p className="text-[40px]">25°C</p>
+      <img src={imgClima} alt="" />
       </div>
     </div>
   );
