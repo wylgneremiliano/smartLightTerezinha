@@ -83,17 +83,42 @@
   background-color: #292d34;
   border-radius: 10px;
   display: flex;
+  height: 488px;
+  overflow-y: auto;
   align-items: start;
   padding: 15px;
   flex-direction: column;
 }
 .inputPesquisa {
-  width: 300px;
+  display: flex;
+  
+  width: 100%;
+  height: 35px;
   background-color: white;
   border-radius: 20px;
 }
+.itemPesquisa{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 8px;
+  height: 150px;
+  padding: 10px;
+  width: 390px;
+  margin-top: 10px;
+}
 /*Para dispositivos móveis*/
 @media only screen and (max-width: 600px) {
+  .itemPesquisa{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 8px;
+  height: 150px;
+  padding: 10px;
+  width: 300px;
+  margin-top: 10px;
+}
   .cardUniversalDosDispositivosIguais {
     width: 200px;
   min-width:200px;
@@ -129,14 +154,16 @@
     margin-top: 10px;
   }
   .cardPesquisaDispositivo {
-    width: 300px;
+    
     background-color: #292d34;
     border-radius: 10px;
     display: flex;
-    align-items: start;
+    align-items: center;
+    overflow-y: auto;
     padding: 15px;
     flex-direction: column;
     margin-top: 10px;
+    height: 500px;
   }
   .elementosInferiores {
     display: flex;
@@ -159,8 +186,6 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
-}
 
 .DashBoard {
   background-color: #3e444e;
@@ -187,4 +212,7 @@ h2 {
 }
 .cinzaDefault {
   color: #acacac;
+}
+.cinzaFundo {
+  background-color: #3e444e;
 }
