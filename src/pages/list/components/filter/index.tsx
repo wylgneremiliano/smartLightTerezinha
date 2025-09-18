@@ -4,12 +4,12 @@ import "./style.css";
 const Filter = () => {
   return (
     <div className="filter-Container">
-      <div className="filter-header">
+      <div className="filter-Header">
         <h1>Filtros</h1>
         <img className="iconeFilter" src={filter} />
       </div>
 
-      <div className="description-header">
+      <div className="description-Header">
         <h2>Tipo</h2>
         <h2>Nome</h2>
         <h2>Grupo</h2>
