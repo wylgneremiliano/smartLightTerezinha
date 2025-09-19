@@ -1,0 +1,7 @@
+.description-Header {
+  display: flex;
+  flex-direction: row;
+  background-color: red;
+  justify-content: space-around;
+  margin-top: 50px;
+}
