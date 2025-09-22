@@ -1,7 +1,28 @@
+.list {
+  display: flex;
+  width: 100%;
+  color: white;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
 .description-Header {
   display: flex;
   flex-direction: row;
-  background-color: red;
   justify-content: space-around;
   margin-top: 50px;
+  align-items: center;
 }
+
+.table-line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #3E444E;
+  border-radius: 5px;
+  height: 40px;
+  margin-top: 10px;
+}
+
