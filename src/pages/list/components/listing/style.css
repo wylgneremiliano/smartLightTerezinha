@@ -4,7 +4,6 @@
   color: white;
   flex-direction: column;
   justify-content: space-around;
-
 }
 
 .description-Header {
@@ -20,9 +19,16 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  background-color: #3E444E;
+  background-color: #3e444e;
   border-radius: 5px;
   height: 40px;
   margin-top: 10px;
 }
 
+.green {
+  color: green;
+}
+
+.gray {
+  color: azure;
+}

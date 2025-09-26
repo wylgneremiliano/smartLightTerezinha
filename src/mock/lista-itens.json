@@ -1,0 +1,15 @@
+[{
+    "id": "string",
+    "tipo": "Lampada",
+    "nome": "string",
+    "grupo": "string",
+    "status_conexao": true,
+    "estado": false
+},{
+    "id": "string",
+    "tipo": "string",
+    "nome": "string",
+    "grupo": "string",
+    "status_conexao": false,
+    "estado": false
+} ]
