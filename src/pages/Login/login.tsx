@@ -1,8 +1,12 @@
 import { useState } from 'react';
 import './login.css';
+import { useNavigate } from 'react-router-dom';
+//import Alert from '@mui/material/Alert';
 
 
 function Login() { 
+
+  const navigate = useNavigate();
 
   //Armazena o valor digitado pelo usuário
   const [username, setUsername] = useState<string>(''); 
@@ -11,16 +15,21 @@ function Login() {
   //Verificação simples
   const fazerLogin = (username: string, password: string) => {
 
-    if (username === 'usuario' && password === 'Teste123') {
-      console.log('Login feito com sucesso!');
-      return true;
+
+
+    const isLoggedIn = username === 'usuario' && password === 'Teste123';
+
+    if (isLoggedIn) {
+      localStorage.setItem("token", 'Login feito com sucesso!');
+      navigate('/dashboard');
+     
+      return isLoggedIn;
     } else {
         console.log('Usuário ou senha incorretos');
-        return false;
+        return isLoggedIn;
     }
   };
-  
-  
+
   //Lida com a ação de login, após o envio do formulário
   const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault(); //Impede o recarregamento da página após o envio do formulário
@@ -28,6 +37,8 @@ function Login() {
     fazerLogin(username, password);
   }
 
+  //colocar useeffect verificando se o token existe, se existir redireciona para o dashboard
+  //se não existir, permanece na página de login
   
   return (
     // criei uma div body para não afetar o estilo das outras páginas
