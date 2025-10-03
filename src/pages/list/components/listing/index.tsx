@@ -1,8 +1,37 @@
+import { useEffect, useState } from "react";
 import "./style.css";
-import listaItens from "../../../../mock/lista-itens.json";
 import { Switch } from "@mui/material";
 
+import axios from "axios";
+
+type PropsItens = {
+  tipo: string;
+  nome: string;
+  grupo: string;
+  status_conexao: boolean;
+  estado: boolean;
+};
+
 const Listing = () => {
+  const [listaItens, setListaItens] = useState<PropsItens[]>([]);
+
+  const buscaItens = async () => {
+    try {
+      setListaItens(
+        (
+          await axios.get(
+            `https://smartlightterezinhabackend.onrender.com/lista-dispositivos-sem-token`
+          )
+        ).data
+      );
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  useEffect(() => {
+    buscaItens();
+  }, []);
+
   return (
     <div className="list">
       <div className="description-Header">
@@ -12,10 +41,11 @@ const Listing = () => {
         <h2>Status de Conexão</h2>
         <h2>Ligar/Desligar</h2>
       </div>
-      {listaItens.map((item) => (
+
+      {listaItens?.map((item) => (
         <div className="table-line">
           <div>{item.tipo}</div>
-          <div>{item.nome}</div>
+          <div className="line">{item.nome}</div>
           <div>{item.grupo}</div>
           <div className={`${item.status_conexao ? "green" : "gray"}`}>
             {item.status_conexao ? "Conectado" : "Desconectado"}
@@ -23,7 +53,6 @@ const Listing = () => {
           <Switch color="success" checked={item.estado} />
         </div>
       ))}
-    
     </div>
   );
 };
