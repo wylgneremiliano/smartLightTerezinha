@@ -1,5 +1,6 @@
 @import "tailwindcss";
 .BarraTop {
+  z-index: 999;
   background-color: #292d34;
   width: 100dvw;
   height: 90px;
@@ -193,7 +194,6 @@
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 h1 {
   font-size: 40px;
@@ -215,4 +215,18 @@ h2 {
 }
 .cinzaFundo {
   background-color: #3e444e;
+}
+.barralateral{
+  background-color: #3b414a;
+  width: 150px;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+}
+.icon{
+  width: 71px;
+  margin: 15px;
 }

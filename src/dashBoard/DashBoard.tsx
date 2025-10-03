@@ -5,12 +5,17 @@ import BotaoLocais from "./componentes/botaoLocais";
 import CardPesquisaDispositivo from "./componentes/cardPesquisaDispositivo";
 import CardsLigarDesligarTodosDispositivosIguais from "./componentes/cardsLigarDesligar";
 import CardStatus from "./componentes/cardStatus";
+import BarraLateral from "./componentes/BarraLateral";
 
 const DashBoard = () => {
-  const [dispositvos, setDispositivos] = useState<number>(10);
+  const [dispositivos, setDispositivos] = useState<number>(10);
   return (
     <div className="DashBoard">
+      
       <BarraTop></BarraTop>
+      <div className="flex">
+      <BarraLateral></BarraLateral>
+      <div className="flex-grow flex flex-col items-center ">
       <div className="containerBotaoLocais">
         <BotaoLocais texto="Salas"></BotaoLocais>
         <BotaoLocais texto="Refeitório"></BotaoLocais>
@@ -44,13 +49,15 @@ const DashBoard = () => {
         </div>
         <div className="containerLigarDesligarDispositivos">
           {
-            Array.from({length: dispositvos}).map((_,index)=>(
+            Array.from({length: dispositivos}).map((_,index)=>(
               <CardsLigarDesligarTodosDispositivosIguais key={index}></CardsLigarDesligarTodosDispositivosIguais>
             ))}
         </div>
         </div>
         <CardPesquisaDispositivo></CardPesquisaDispositivo>
         </div>
+        </div>
+      </div>
       
     </div>
   );
