@@ -12,8 +12,9 @@ const ApiClimatologico = () => {
     <div className="apiClimatologico flex flex-col items-center rounded-md">
       <div className="">
         <h2>Lagoa Grande</h2>
-        <p className="text-[40px]">{dataApi}°C</p>
-        <img src={imgClima} alt="" />
+        <p className="text-[40px]">{dataApi.temp}°C</p>
+        <img width={80} src={imgClima} alt="" />
+        <p>{dataApi.description}</p>
       </div>
     </div>
   );

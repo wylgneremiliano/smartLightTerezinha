@@ -1,9 +1,9 @@
 import { useState } from "react";
-
+import type { dataApiClima } from "../dashBoard/types/types";
 
 
 export function ChamadaApi() {
-  const [dataApi, setDataApi] = useState<string>("");
+  const [dataApi, setDataApi] = useState<dataApiClima>({temp:0, description:""});
 
     const fecthApiClima = async () => {
         try {
@@ -12,7 +12,7 @@ export function ChamadaApi() {
     );
 
     const data = await result.json();
-    setDataApi(data.main.temp);
+    setDataApi({description: data.weather[0].description,  temp: data.main.temp});
   } catch {
     console.log("Erro ao chamar API");
   }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ApiClimatologico from "./componentes/apiClimatolgico";
 import BarraTop from "./componentes/barraTop";
-import BotaoLocais from "./componentes/botaoLocais";
+
 import CardPesquisaDispositivo from "./componentes/cardPesquisaDispositivo";
 import CardsLigarDesligarTodosDispositivosIguais from "./componentes/cardsLigarDesligar";
 import CardStatus from "./componentes/cardStatus";
@@ -9,6 +9,10 @@ import BarraLateral from "./componentes/BarraLateral";
 import { APIdispositivos } from "../APi/APIdispositivos";
 import type { Dispositivos } from "../dashBoard/types/types";
 const DashBoard = () => {
+  const [filtroGrupo, setFiltroGrupo] = useState<string>("");
+  const [dispositivosIguaisDoGrupo, setDispositivosIguaisDoGrupo] = useState<
+    string[]
+  >([]);
   const [dispositivos, setDispositivos] = useState<Dispositivos[]>([]);
   const [calculoDispositivos, setCalculoDispositivos] = useState({
     conectados: 0,
@@ -18,8 +22,24 @@ const DashBoard = () => {
 
   const handleApi = async () => {
     const disp = await APIdispositivos();
-    if (disp) setDispositivos(disp.data);
+    if (disp && filtroGrupo !== "" && filtroGrupo !== "Todos") {
+      const data = disp.data;
+      setDispositivos(
+        data.filter((itens: Dispositivos) => itens.grupo === filtroGrupo)
+      );
+    } else if (disp) {
+      if (filtroGrupo === "Todos" || filtroGrupo === "") {
+        setDispositivos(disp.data);
+      }
+    }
   };
+  const calcularElementosIguais = () => {
+    const dispositivosIguaisGrupo = [
+      ...new Set(dispositivos.map((item) => item.tipo)),
+    ];
+    setDispositivosIguaisDoGrupo(dispositivosIguaisGrupo);
+  };
+
   const calcularDispo = () => {
     const conectados = dispositivos.filter(
       (item) => item.status_conexao
@@ -36,10 +56,17 @@ const DashBoard = () => {
       quantidadeDispositivos,
     });
   };
+    useEffect(() => {
+    calcularElementosIguais();
+  }, []);
+
   useEffect(() => {
+    calcularElementosIguais();
     handleApi();
     calcularDispo();
-  }, []);
+  }, [filtroGrupo]);
+
+
   useEffect(() => {
     calcularDispo();
   }, [dispositivos]);
@@ -48,19 +75,29 @@ const DashBoard = () => {
     <div className="DashBoard">
       <BarraTop></BarraTop>
       <div className="flex">
-        {
-        window.innerWidth > 768 && <BarraLateral></BarraLateral>
-        }
-       
+        {window.innerWidth > 768 && <BarraLateral></BarraLateral>}
+
         <div className="flex-grow flex flex-col items-center ">
           <div className="containerBotaoLocais">
-            <BotaoLocais texto="Salas"></BotaoLocais>
-            <BotaoLocais texto="Refeitório"></BotaoLocais>
-            <BotaoLocais texto="Secretarias"></BotaoLocais>
-            <BotaoLocais texto="Biblioteca"></BotaoLocais>
-            <BotaoLocais texto="Banheiros"></BotaoLocais>
-            <BotaoLocais texto="Quadras"></BotaoLocais>
-            <BotaoLocais texto="Depositos"></BotaoLocais>
+            {[
+              "Todos",
+              "Salas",
+              "Refeitório",
+              "Secretaria",
+              "Biblioteca",
+              "Banheiros",
+              "Quadras",
+              "Depositos",
+            ].map((grupo) => (
+              <button
+                key={grupo}
+                onClick={() => setFiltroGrupo(grupo)}
+                value={grupo}
+                className="BotaoLocais"
+              >
+                {grupo}
+              </button>
+            ))}
           </div>
           <div className="elementosInferiores">
             <div>
@@ -85,14 +122,22 @@ const DashBoard = () => {
                 </div>
               </div>
               <div className="containerLigarDesligarDispositivos">
-                <CardsLigarDesligarTodosDispositivosIguais nomeDispositivo="Lâmpadas" tipoDispositivo="lampada"></CardsLigarDesligarTodosDispositivosIguais>
+                {dispositivosIguaisDoGrupo.map((itens) => (
+                  <CardsLigarDesligarTodosDispositivosIguais
+                    nomeDispositivo={itens}
+                    tipoDispositivo={itens}
+                  ></CardsLigarDesligarTodosDispositivosIguais>
+                ))}
+                {/* <CardsLigarDesligarTodosDispositivosIguais nomeDispositivo="Lâmpadas" tipoDispositivo="lampada"></CardsLigarDesligarTodosDispositivosIguais>
                  <CardsLigarDesligarTodosDispositivosIguais nomeDispositivo="Projetores" tipoDispositivo="projetor"></CardsLigarDesligarTodosDispositivosIguais>
                   <CardsLigarDesligarTodosDispositivosIguais nomeDispositivo="TVs" tipoDispositivo="tv"></CardsLigarDesligarTodosDispositivosIguais>
                    <CardsLigarDesligarTodosDispositivosIguais nomeDispositivo="interruptores" tipoDispositivo="interruptor"></CardsLigarDesligarTodosDispositivosIguais>
-                    <CardsLigarDesligarTodosDispositivosIguais nomeDispositivo="Ares-Condicionados" tipoDispositivo="arCondicionado"></CardsLigarDesligarTodosDispositivosIguais>
+                    <CardsLigarDesligarTodosDispositivosIguais nomeDispositivo="Ares-Condicionados" tipoDispositivo="arCondicionado"></CardsLigarDesligarTodosDispositivosIguais> */}
               </div>
             </div>
-            <CardPesquisaDispositivo listaDispositivos={dispositivos}></CardPesquisaDispositivo>
+            <CardPesquisaDispositivo
+              listaDispositivos={dispositivos}
+            ></CardPesquisaDispositivo>
           </div>
         </div>
       </div>
