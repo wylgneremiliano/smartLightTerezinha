@@ -7,4 +7,5 @@ body {
   background-color: #292d34;
   color: #acacac;
   font-family: "Inter", sans-serif;
+  text-overflow: ellipsis;
 }
