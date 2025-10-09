@@ -37,6 +37,7 @@ const Info = () => {
                     <li>Os usuários (professores e administradores) podem visualizar informações e gerenciar os equipamentos de forma fácil, pelo computador ou celular.</li>
                 </ol>
                 <p>Esse projeto mostra como a tecnologia pode facilitar o dia a dia da escola e, ao mesmo tempo, serve como aprendizado prático para os alunos que estão desenvolvendo a solução.</p>
+                <p>Desenvolvedores: Luma, Gabriel, Larissa, Caliu, Sérgio, Luiza, Adriely, Emerson, Pedro, Vitor, Luiz, Ícaro</p>
             </div>
         </div>
 
