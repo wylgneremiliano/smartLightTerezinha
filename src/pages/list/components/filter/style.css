@@ -25,3 +25,27 @@
   font-size: 14px;
   font-weight: 500;
 }
+
+.buscar {
+  width: 519px;
+  height: 60px;
+  background-color: transparent;
+  border: none;
+}
+
+.img-busca {
+  width: 35px;
+  height: 35px;
+  align-items: center;
+  margin-right: 25px;
+  padding-left: 15px;
+}
+
+.caixa-busca {
+  background-color: #3b414a;
+  border-radius: 15px;
+  width: 519px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
