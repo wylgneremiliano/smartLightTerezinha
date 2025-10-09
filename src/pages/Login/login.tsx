@@ -24,7 +24,7 @@ function Login() {
       const response = await fetch("https://smartlightterezinhabackend.onrender.com/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: username, password }),
+        body: JSON.stringify({ usuario: username, senha: password }),
       });
 
       if (!response.ok) {
@@ -64,11 +64,8 @@ function Login() {
 
     // normaliza e validação simples de email
     const email = username.trim();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      setError("Digite um e-mail válido!");
-      return;
-    }
+   
+    
     if (!password) {
       setError("Digite a senha!");
       return;
@@ -102,7 +99,7 @@ function Login() {
         <form noValidate onSubmit={handleLogin}>
           <label htmlFor="usuario">Usuário</label>
           <input 
-            type="email" 
+            type="text" 
             id="usuario" 
             name="usuario" 
             onChange = {(e) => setUsername(e.target.value)} // atualiza o valor digitado
