@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
 import "./style.css";
 import { Switch } from "@mui/material";
 
-import axios from "axios";
 
-type PropsItens = {
+
+export type PropsItens = {
   tipo: string;
   nome: string;
   grupo: string;
@@ -12,25 +11,14 @@ type PropsItens = {
   estado: boolean;
 };
 
-const Listing = () => {
-  const [listaItens, setListaItens] = useState<PropsItens[]>([]);
+type Props = {
+  listaItens: PropsItens[];
+}
 
-  const buscaItens = async () => {
-    try {
-      setListaItens(
-        (
-          await axios.get(
-            `https://smartlightterezinhabackend.onrender.com/lista-dispositivos-sem-token`
-          )
-        ).data
-      );
-    } catch (e) {
-      console.log(e);
-    }
-  };
-  useEffect(() => {
-    buscaItens();
-  }, []);
+const Listing = ({ listaItens }: Props) => {
+
+
+
 
   return (
     <div className="list">

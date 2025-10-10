@@ -31,6 +31,13 @@
   height: 60px;
   background-color: transparent;
   border: none;
+  color: #acacac;
+  font-size: larger;
+}
+
+.buscar:focus {
+  outline: none;
+
 }
 
 .img-busca {
@@ -55,4 +62,24 @@
   height: 35px;
   align-items: center;
   margin-left: 25px;
+}
+
+.img-restart:hover {
+  cursor: pointer;
+  transform: rotate(180deg);
+
+
+}
+
+.img-restart {
+  transition: transform 0.3s ease-in-out;
+}
+
+.img-busca:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.img-busca {
+  transition: transform 0.3s ease-in-out;
 }
