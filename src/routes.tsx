@@ -3,6 +3,7 @@ import DashBoard from "./dashBoard/DashBoard"
 
 import Login from "./pages/Login/login"
 import { List } from "./pages/list"
+import Info from "./pages/Info/info"
 
 const RotasDoApp = () => {
   return (
@@ -15,10 +16,10 @@ const RotasDoApp = () => {
           <Login />
         } />
         <Route path="/dashboard" element={
-          <DashBoard></DashBoard>
+          <DashBoard />
         } />
         <Route path="/info" element={
-          <h1>Informações gerais</h1>
+          <Info />
         } />
         <Route path="/lista-itens" element={
           <List />
