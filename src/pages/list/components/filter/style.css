@@ -1,0 +1,85 @@
+.filter-Container {
+  height: 50px;
+  color: white;
+  display: flex;
+}
+
+.filter-Header {
+  align-items: center;
+  display: flex;
+}
+
+.iconeFilter {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  margin-left: 40px;
+}
+
+.filter-Header h1 {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.description-Header {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.buscar {
+  width: 519px;
+  height: 60px;
+  background-color: transparent;
+  border: none;
+  color: #acacac;
+  font-size: larger;
+}
+
+.buscar:focus {
+  outline: none;
+
+}
+
+.img-busca {
+  width: 35px;
+  height: 35px;
+  align-items: center;
+  margin-right: 25px;
+  padding-left: 15px;
+}
+
+.caixa-busca {
+  background-color: #3b414a;
+  border-radius: 15px;
+  width: 519px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.img-restart {
+  width: 35px;
+  height: 35px;
+  align-items: center;
+  margin-left: 25px;
+}
+
+.img-restart:hover {
+  cursor: pointer;
+  transform: rotate(180deg);
+
+
+}
+
+.img-restart {
+  transition: transform 0.3s ease-in-out;
+}
+
+.img-busca:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.img-busca {
+  transition: transform 0.3s ease-in-out;
+}
