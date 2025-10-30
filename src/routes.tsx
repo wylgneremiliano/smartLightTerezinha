@@ -1,18 +1,31 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { List } from "./pages/list";
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import DashBoard from "./dashBoard/DashBoard"
+
+import Login from "./pages/Login/login"
+import { List } from "./pages/list"
 
 const RotasDoApp = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<h1>login</h1>} />
-        <Route path="/login" element={<h1>login</h1>} />
-        <Route path="/dashboard" element={<h1>dashboard</h1>} />
-        <Route path="/info" element={<h1>Informações gerais</h1>} />
-        <Route path="/lista-itens" element={<List />} />
+        <Route path="/" element={
+          <Login />
+        } />
+        <Route path="/login" element={
+          <Login />
+        } />
+        <Route path="/dashboard" element={
+          <DashBoard></DashBoard>
+        } />
+        <Route path="/info" element={
+          <h1>Informações gerais</h1>
+        } />
+        <Route path="/lista-itens" element={
+          <List />
+        } />
       </Routes>
     </BrowserRouter>
-  );
-};
+  )
+}
 
 export { RotasDoApp };
