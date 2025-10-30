@@ -5,7 +5,7 @@
   color: white;
   margin: 0px;
   padding: 0px;
-  font-family: 'Popins', sans-serif;
+  font-family: 'Inter', sans-serif;
   width: 100vw;
   height: 100vh;
   background-color: #292e34;
@@ -30,7 +30,7 @@
 }
 
 button{
-  font-family: 'Popins', sans-serif;
+  font-family: 'Inter', sans-serif;
   margin: 10px 0;
   background-color: #4b7537;
   width: 100%;
