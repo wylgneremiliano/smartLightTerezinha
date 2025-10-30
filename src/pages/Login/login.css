@@ -11,7 +11,7 @@
   background-color: #292e34;
 }
 
-.container{
+.container-login{
   width: 400px;
   max-width: 90%;
   display: flex;
@@ -55,7 +55,7 @@ input{
 
 h1{
   font-size: 32px;
- 
+  text-align: center;
 }
 
 form {

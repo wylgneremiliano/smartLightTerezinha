@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './login.css';
 import { useNavigate } from 'react-router-dom';
+import { URL_PATH } from '../../constants';
 
 function Login() { 
 
@@ -21,7 +22,7 @@ function Login() {
       // limpa erro anterior ao iniciar nova tentativa
       setError(null);
 
-      const response = await fetch("https://smartlightterezinhabackend.onrender.com/login", {
+      const response = await fetch(`${URL_PATH}/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ usuario: username, senha: password }),
@@ -94,7 +95,7 @@ function Login() {
   return (
     // criei uma div body para não afetar o estilo das outras páginas
     <div className="body">
-      <div className="container">
+      <div className="container-login">
         <h1>SmartLight</h1>
         <form noValidate onSubmit={handleLogin}>
           <label htmlFor="usuario">Usuário</label>

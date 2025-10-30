@@ -1,9 +1,10 @@
 import axios from "axios";
+import { URL_PATH } from "../constants";
 
 export async function APIdispositivos() {
   try {
     const dataBruto = await axios.get(
-      `http://[fe80::96c6:91ff:fe41:d2e3]:3000/lista-dispositivos-sem-token`
+      `${URL_PATH}/lista-dispositivos-sem-token`
     );
     return dataBruto;
   } catch (err) {

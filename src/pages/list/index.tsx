@@ -5,6 +5,7 @@ import { Listing, type PropsItens } from "./components/listing";
 import { Menu } from "./components/menu";
 import "./style.css";
 import axios from "axios";
+import { URL_PATH } from "../../constants";
 
 const List = () => {
   const [listaItens, setListaItens] = useState<PropsItens[]>([]);
@@ -16,7 +17,7 @@ const List = () => {
       setListaItens(
         (
           await axios.get(
-            `https://smartlightterezinhabackend.onrender.com/lista-dispositivos-sem-token`
+            `${URL_PATH}/lista-dispositivos-sem-token`
           )
         ).data
       );
