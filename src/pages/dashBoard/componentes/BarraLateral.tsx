@@ -1,6 +1,6 @@
-import iconHome from "../../assets/homeIcon.png";
-import iconListItem from "../../assets/listItemIcon.png";
-import iconInfo from "../../assets/infoIcon.png";
+import iconHome from "../../../assets/homeIcon.png";
+import iconListItem from "../../../assets/listItemIcon.png";
+import iconInfo from "../../../assets/infoIcon.png";
 import "./style.css";
 
 

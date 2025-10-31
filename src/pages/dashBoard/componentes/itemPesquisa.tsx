@@ -1,10 +1,11 @@
 import { Switch } from "@mui/material";
-import imgInterruptor from "../../assets/dashboard/switch.png"
-import imgArCondicionado from "../../assets/dashboard/air.png";
-import imgProjetor from "../../assets/dashboard/projector.png";
-import imgTv from "../../assets/dashboard/tv.png";
-import imgLampada from "../../assets/dashboard/ideia.png";
-import { APILigaDesligaDispositivo } from "../../APi/APILigaDesliga";
+
+import imgArCondicionado from "../../../assets/dashboard/air.png";
+import imgProjetor from "../../../assets/dashboard/projector.png";
+import imgTv from "../../../assets/dashboard/tv.png";
+import imgLampada from "../../../assets/dashboard/ideia.png";
+import { APILigaDesligaDispositivo } from "../../../api/APILigaDesliga";
+
 interface Props {
   nome: string;
   tipo: string;

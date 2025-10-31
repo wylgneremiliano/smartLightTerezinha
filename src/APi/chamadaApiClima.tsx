@@ -1,5 +1,6 @@
 import { useState } from "react";
-import type { dataApiClima } from "../dashBoard/types/types";
+import type { dataApiClima } from "../pages/dashBoard/types/types";
+
 
 
 export function ChamadaApi() {

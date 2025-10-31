@@ -1,9 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import DashBoard from "./dashBoard/DashBoard"
+
 
 import Login from "./pages/Login/login"
 import { List } from "./pages/list"
 import Info from "./pages/Info/info"
+import DashBoard from "./pages/dashBoard/DashBoard"
 
 const RotasDoApp = () => {
   return (

@@ -1,5 +1,5 @@
 import "./style.css";
-import logo from "../../assets/logoEscola.png"
+import logo from "../../../assets/logoEscola.png"
 const BarraTop = () => {
   return (
     <div className="BarraTop">

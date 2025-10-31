@@ -6,8 +6,9 @@ import CardPesquisaDispositivo from "./componentes/cardPesquisaDispositivo";
 import CardsLigarDesligarTodosDispositivosIguais from "./componentes/cardsLigarDesligar";
 import CardStatus from "./componentes/cardStatus";
 import BarraLateral from "./componentes/BarraLateral";
-import { APIdispositivos } from "../APi/APIdispositivos";
+
 import type { Dispositivos } from "../dashBoard/types/types";
+import { APIdispositivos } from "../../api/APIdispositivos";
 const DashBoard = () => {
   const [filtroGrupo, setFiltroGrupo] = useState<string>("");
   const [dispositivosIguaisDoGrupo, setDispositivosIguaisDoGrupo] = useState<
@@ -56,7 +57,7 @@ const DashBoard = () => {
       quantidadeDispositivos,
     });
   };
-    useEffect(() => {
+  useEffect(() => {
     calcularElementosIguais();
   }, []);
 
