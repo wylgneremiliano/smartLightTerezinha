@@ -1,0 +1,16 @@
+.BarraTop {
+    z-index: 999;
+    background-color: #292d34;
+    width: 100dvw;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+
+
+.logo {
+    width: 100px;
+    margin-right: 5%;
+}

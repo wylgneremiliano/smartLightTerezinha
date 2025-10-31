@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import ApiClimatologico from "./componentes/apiClimatolgico";
-import BarraTop from "./componentes/barraTop";
 
 import CardPesquisaDispositivo from "./componentes/cardPesquisaDispositivo";
 import CardsLigarDesligarTodosDispositivosIguais from "./componentes/cardsLigarDesligar";
 import CardStatus from "./componentes/cardStatus";
-import BarraLateral from "./componentes/BarraLateral";
+
 
 import type { Dispositivos } from "../dashBoard/types/types";
 import { APIdispositivos } from "../../api/APIdispositivos";
+import { NavBar } from "../../components/NavBar";
+import { Header } from "../../components/Header";
+
 const DashBoard = () => {
   const [filtroGrupo, setFiltroGrupo] = useState<string>("");
   const [dispositivosIguaisDoGrupo, setDispositivosIguaisDoGrupo] = useState<
@@ -74,9 +76,9 @@ const DashBoard = () => {
 
   return (
     <div className="DashBoard">
-      <BarraTop></BarraTop>
+      <Header nome="Página inicial" />
       <div className="flex">
-        {window.innerWidth > 768 && <BarraLateral></BarraLateral>}
+        {window.innerWidth > 768 && <NavBar />}
 
         <div className="flex-grow flex flex-col items-center ">
           <div className="containerBotaoLocais">

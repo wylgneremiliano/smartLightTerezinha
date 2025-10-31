@@ -29,7 +29,7 @@
   max-width: 500px ;
 }
 
-button{
+.botao-login{
   font-family: 'Inter', sans-serif;
   margin: 10px 0;
   background-color: #4b7537;
@@ -66,7 +66,7 @@ form {
   
 }
 
-form button {
+form .botao-login {
   align-self: auto;
 }
 
@@ -79,13 +79,13 @@ input:hover{
   background-color:  #292e34;
 }
 
-button:hover{
+.botao-login:hover{
   background-color: #587a48;
   cursor: pointer;
   width: 100%;
 }
 
-button:focus{
+.botao-login:focus{
   outline: none;
   box-shadow: 0 0 5px #171717;
 }

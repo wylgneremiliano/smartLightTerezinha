@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import { APILigaDesligaDispositivo } from "../../../../api/APILigaDesliga";
 import "./style.css";
 import { Switch } from "@mui/material";
 
@@ -9,14 +11,21 @@ export type PropsItens = {
   grupo: string;
   status_conexao: boolean;
   estado: boolean;
+  id: string;
 };
 
 type Props = {
   listaItens: PropsItens[];
+  buscaItens: () => void;
+
 }
 
-const Listing = ({ listaItens }: Props) => {
+const Listing = ({ listaItens, buscaItens }: Props) => {
 
+  const handleChangeSwitch = async (event: React.ChangeEvent<HTMLInputElement>, id: string) => {
+    APILigaDesligaDispositivo({ acao: event.target.checked ? "on" : "off", id, buscaItens });
+
+  }
 
 
 
@@ -31,14 +40,15 @@ const Listing = ({ listaItens }: Props) => {
       </div>
 
       {listaItens?.map((item) => (
-        <div className="table-line">
+        <div className="table-line" key={item.id}>
           <div>{item.tipo}</div>
           <div className="line">{item.nome}</div>
           <div>{item.grupo}</div>
           <div className={`${item.status_conexao ? "green" : "gray"}`}>
             {item.status_conexao ? "Conectado" : "Desconectado"}
           </div>
-          <Switch color="success" checked={item.estado} />
+          <Switch color="success" checked={item.estado} onChange={(e) => handleChangeSwitch(e, item.id)} />
+
         </div>
       ))}
     </div>

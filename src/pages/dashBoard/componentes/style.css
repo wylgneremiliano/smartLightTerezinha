@@ -1,16 +1,8 @@
 @import "tailwindcss";
-.BarraTop {
-  z-index: 999;
-  background-color: #292d34;
-  width: 100dvw;
-  height: 90px;
-  display: flex;
-  align-items: center;
-  color: white;
-}
-.logo {
-  width: 100px;
-}
+
+
+
+
 .BotaoLocais:hover {
   background-color: #1f3217;
 }
@@ -27,6 +19,7 @@
   display: inline;
   margin: 10px;
 }
+
 .apiClimatologico {
   color: #acacac;
   width: 200px;
@@ -34,17 +27,20 @@
   background-color: #292d34;
   border-radius: 15px;
 }
+
 .apiClimatologicoEstatusDispositivos {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .containerBotaoLocais {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 }
+
 .containerStatusDispositivos {
   background-color: #292d34;
   display: flex;
@@ -57,28 +53,32 @@
   margin: 10px;
   height: 210px;
 }
+
 .containerLigarDesligarDispositivos {
   display: flex;
   align-items: center;
-  
+
   background-color: #292d34;
   height: 257px;
   width: 810px;
   border-radius: 10px;
   overflow: auto;
 }
+
 .cardUniversalDosDispositivosIguais {
   padding: 15px;
   width: 265px;
-  min-width:265px;
+  min-width: 265px;
   height: 200px;
   background-color: #3e444e;
   border-radius: 10px;
   margin: 0 17px;
 }
+
 .elementosInferiores {
   display: flex;
 }
+
 .cardPesquisaDispositivo {
   width: 421px;
   background-color: #292d34;
@@ -90,15 +90,17 @@
   padding: 15px;
   flex-direction: column;
 }
+
 .inputPesquisa {
   display: flex;
-  
+
   width: 100%;
   height: 35px;
   background-color: white;
   border-radius: 20px;
 }
-.itemPesquisa{
+
+.itemPesquisa {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -108,30 +110,34 @@
   width: 380px;
   margin-top: 10px;
 }
+
 /*Para dispositivos móveis*/
 @media only screen and (max-width: 600px) {
-  .itemPesquisa{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-radius: 8px;
-  height: 150px;
-  padding: 10px;
-  width: 300px;
-  margin-top: 10px;
-}
+  .itemPesquisa {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 8px;
+    height: 150px;
+    padding: 10px;
+    width: 300px;
+    margin-top: 10px;
+  }
+
   .cardUniversalDosDispositivosIguais {
     width: 200px;
-  min-width:200px;
+    min-width: 200px;
     height: 192px;
     background-color: #3e444e;
     border-radius: 10px;
     margin: 17px;
     padding: 20px;
   }
+
   .imagensCard {
     width: 50px;
   }
+
   .apiClimatologico {
     width: 300px;
     height: 210px;
@@ -141,6 +147,7 @@
     background-color: #292d34;
     border-radius: 15px;
   }
+
   .containerStatusDispositivos {
     display: flex;
     justify-content: space-between;
@@ -148,14 +155,16 @@
     flex-direction: column;
     width: 300px;
   }
+
   .inputPesquisa {
     width: 250px;
     background-color: white;
     border-radius: 20px;
     margin-top: 10px;
   }
+
   .cardPesquisaDispositivo {
-    
+
     background-color: #292d34;
     border-radius: 10px;
     display: flex;
@@ -166,28 +175,30 @@
     margin-top: 10px;
     height: 500px;
   }
+
   .elementosInferiores {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
   }
+
   .apiClimatologicoEstatusDispositivos {
     display: flex;
     flex-direction: column;
   }
+
   .containerLigarDesligarDispositivos {
     width: 350px;
     overflow-x: scroll;
     height: auto;
     margin-left: 10px;
     display: flex;
- 
+
     padding: 20px;
   }
-  .barralateral{
- display: none;
-}
+
+
 }
 
 
@@ -198,37 +209,39 @@
   display: flex;
   flex-direction: column;
 }
+
 h1 {
   font-size: 40px;
 }
+
 h2 {
   font-size: 24px;
 }
+
 .verdeDefault {
   background-color: #4a7537;
 }
+
 .vermelhoDefault {
   background-color: #8e0000;
 }
+
 .azulDefault {
   background-color: #244f76;
 }
+
 .cinzaDefault {
   color: #acacac;
 }
+
 .cinzaFundo {
   background-color: #3e444e;
 }
-.barralateral{
-  background-color: #3b414a;
-  width: 150px;
-  min-height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-.icon{
+
+
+
+.icon {
   width: 71px;
   margin: 15px;
+  cursor: pointer;
 }

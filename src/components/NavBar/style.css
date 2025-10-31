@@ -1,0 +1,14 @@
+ .barralateral {
+     display: none;
+ }
+
+ .barralateral {
+     background-color: #3b414a;
+     width: 150px;
+
+     height: 90vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+ }

@@ -117,7 +117,7 @@ function Login() {
           {error && <div className="error" role="alert">{error}</div>}
 
           {/* Botão desabilitado durante loading para evitar múltiplos envios */}
-          <button type="submit" disabled={loading} aria-busy={loading}>
+          <button type="submit" disabled={loading} aria-busy={loading} className='botao-login'>
             {loading ? 'Entrando...' : 'Entrar'}
           </button>
 
