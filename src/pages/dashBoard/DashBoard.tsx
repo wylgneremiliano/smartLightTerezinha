@@ -6,8 +6,7 @@ import CardsLigarDesligarTodosDispositivosIguais from "./componentes/cardsLigarD
 import CardStatus from "./componentes/cardStatus";
 
 
-import type { Dispositivos } from "../dashBoard/types/types";
-import { APIdispositivos } from "../../api/APIdispositivos";
+
 import { NavBar } from "../../components/NavBar";
 import { Header } from "../../components/Header";
 import { useNavigate } from "react-router-dom";
@@ -28,19 +27,7 @@ const DashBoard = () => {
     quantidadeDispositivos: 0,
   });
 
-  // const handleApi = async () => {
-  //   const disp = await APIdispositivos();
-  //   if (disp && filtroGrupo !== "" && filtroGrupo !== "Todos") {
-  //     const data = disp.data;
-  //     setDispositivos(
-  //       data.filter((itens: Dispositivos) => itens.grupo === filtroGrupo)
-  //     );
-  //   } else if (disp) {
-  //     if (filtroGrupo === "Todos" || filtroGrupo === "") {
-  //       setDispositivos(disp.data);
-  //     }
-  //   }
-  // };
+
   const calcularElementosIguais = () => {
     if (dispositivos) {
       const dispositivosIguaisGrupo = [
