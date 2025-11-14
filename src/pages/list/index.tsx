@@ -7,6 +7,7 @@ import axios from "axios";
 import { URL_PATH } from "../../constants";
 import { NavBar } from "../../components/NavBar";
 import { Header } from "../../components/Header";
+import { Loader } from "../../components/Loader";
 
 
 const List = () => {
@@ -43,14 +44,7 @@ const List = () => {
         <div className="conteudo-principal">
           <Filter buscaItens={buscaItens} ></Filter>
           {loading ? (
-            <div className="loading">
-
-              <span className="texto">Carregando</span>
-              <div className="progress-bar-container">
-                <div className="progress-bar-fill"></div>
-              </div>
-
-            </div>
+            <Loader />
           ) : <Listing listaItens={listaItens} buscaItens={buscaItens}></Listing>}
 
 

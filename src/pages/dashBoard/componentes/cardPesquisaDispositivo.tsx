@@ -39,11 +39,8 @@ const CardPesquisaDispositivo = ({ listaDispositivos }: props) => {
       <div>
         {filtro?.map((item) => (
           <ItemPesquisa
-          id={item.id}
             key={item.id}
-            nome={item.nome}
-            tipo={item.tipo}
-            status_conexao={item.status_conexao}
+            dispositivo={item}
           ></ItemPesquisa>
         ))}
       </div>

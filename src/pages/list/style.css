@@ -19,57 +19,12 @@
   padding: 50px 80px;
 }
 
-.loading {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-}
 
 
-.progress-bar-fill {
-  height: 100%;
-  background-color: #4caf50;
-  width: 0%;
-  transition: width 0.5s ease-in-out;
-
-}
-
-.progress-bar-container {
-  width: 20%;
-  height: 20px;
-  background-color: #e0e0e0;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-@keyframes fillProgress {
-  0% {
-    width: 0%;
-  }
-
-  100% {
-    width: 100%;
-  }
-}
-
-.progress-bar-fill {
-  height: 100%;
-  background-color: #4caf50;
-  animation: fillProgress 2s infinite;
-}
 
 .mid-loading {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-}
-
-.texto {
-  font-size: 40px;
-  margin-bottom: 20px;
 }

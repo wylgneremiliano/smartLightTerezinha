@@ -5,17 +5,18 @@ import imgProjetor from "../../../assets/dashboard/projector.png";
 import imgTv from "../../../assets/dashboard/tv.png";
 import imgLampada from "../../../assets/dashboard/ideia.png";
 import { APILigaDesligaDispositivo } from "../../../api/APILigaDesliga";
+import type { Dispositivos } from "../types/types";
 
-interface Props {
-  nome: string;
-  tipo: string;
-  status_conexao: boolean;
-  id: string
+type Props = {
+  dispositivo: Dispositivos;
 }
-const ItemPesquisa = ({ nome, tipo, status_conexao, id }: Props) => {
+const ItemPesquisa = ({ dispositivo }: Props) => {
+  const { nome, tipo, status_conexao, id, estado } = dispositivo
   const handleChangeSwitch = async (event: React.ChangeEvent<HTMLInputElement>) => {
     await APILigaDesligaDispositivo({ acao: event.target.checked ? "on" : "off", id });
   }
+
+
   return (
     <div className="cinzaFundo cinzaDefault itemPesquisa">
       <div className="flex justify-between items-center">
@@ -28,7 +29,7 @@ const ItemPesquisa = ({ nome, tipo, status_conexao, id }: Props) => {
                   <img className="imagensCard sm:w-[30px]" src={imgLampada} alt="" />
 
         }
-        <Switch color="success" onChange={(e) => handleChangeSwitch(e)}></Switch>
+        <Switch color="success" onChange={(e) => handleChangeSwitch(e)} checked={estado}></Switch>
       </div>
       <p>
         {nome}

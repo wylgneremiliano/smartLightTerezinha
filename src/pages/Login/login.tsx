@@ -3,12 +3,12 @@ import './login.css';
 import { useNavigate } from 'react-router-dom';
 import { URL_PATH } from '../../constants';
 
-function Login() { 
+function Login() {
 
   const navigate = useNavigate();
 
   // Armazena o valor digitado pelo usuário
-  const [username, setUsername] = useState<string>(''); 
+  const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
   // Estados novos: loading para bloquear submissões concorrentes e error para feedback
@@ -31,13 +31,13 @@ function Login() {
       if (!response.ok) {
         // registra e exibe mensagem amigável
         const text = await response.text().catch(() => '');
-        console.log("Usuário ou senha incorretos", text);
+        alert(`Usuário ou senha incorretos ${text}`);
         setError("Usuário ou senha incorretos");
         return false;
       }
 
       const data = await response.json();
-      console.log("Resposta do servidor:", data);
+      alert(`Resposta do servidor: ${data}`,);
 
       if (data.token) {
         // guarda o token
@@ -47,12 +47,12 @@ function Login() {
         navigate("/dashboard");
         return true;
       } else {
-        console.log("Token não encontrado na resposta");
+        alert("Token não encontrado na resposta");
         setError("Resposta inválida do servidor");
         return false;
       }
     } catch (error) {
-      console.error("Erro na requisição:", error);
+      alert(`Erro na requisição: ${error}`);
       setError("Erro na comunicação com o servidor");
       return false;
     }
@@ -65,8 +65,8 @@ function Login() {
 
     // normaliza e validação simples de email
     const email = username.trim();
-   
-    
+
+
     if (!password) {
       setError("Digite a senha!");
       return;
@@ -99,19 +99,19 @@ function Login() {
         <h1>SmartLight</h1>
         <form noValidate onSubmit={handleLogin}>
           <label htmlFor="usuario">Usuário</label>
-          <input 
-            type="text" 
-            id="usuario" 
-            name="usuario" 
-            onChange = {(e) => setUsername(e.target.value)} // atualiza o valor digitado
-            value = {username} required />
+          <input
+            type="text"
+            id="usuario"
+            name="usuario"
+            onChange={(e) => setUsername(e.target.value)} // atualiza o valor digitado
+            value={username} required />
           <label htmlFor="senha">Senha</label>
-          <input 
-            type="password" 
-            id="senha" 
-            name="senha" 
-            onChange = {(e) => setPassword(e.target.value)}
-            value = {password} required />
+          <input
+            type="password"
+            id="senha"
+            name="senha"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password} required />
 
           {/* Exibe erro amigável para o usuário */}
           {error && <div className="error" role="alert">{error}</div>}
