@@ -4,16 +4,27 @@ import imgArCondicionado from "../../../assets/dashboard/air.png";
 import imgProjetor from "../../../assets/dashboard/projector.png";
 import imgTv from "../../../assets/dashboard/tv.png";
 import imgLampada from "../../../assets/dashboard/ideia.png";
-import { APILigaDesligaDispositivo } from "../../../api/APILigaDesliga";
 import type { Dispositivos } from "../types/types";
+import { usePostDispositivo } from "../../../hook/usePostDispositivo";
+import { useQueryClient } from "@tanstack/react-query";
 
 type Props = {
   dispositivo: Dispositivos;
 }
 const ItemPesquisa = ({ dispositivo }: Props) => {
+  const queryClient = useQueryClient();
+
+  const { mutate } = usePostDispositivo({
+    onSuccess: () => {
+      setTimeout(() => queryClient.invalidateQueries({ queryKey: ['dispositivos'] }), 500);
+    },
+    onError: (data) => {
+      console.log(data.message);
+    }
+  })
   const { nome, tipo, status_conexao, id, estado } = dispositivo
   const handleChangeSwitch = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    await APILigaDesligaDispositivo({ acao: event.target.checked ? "on" : "off", id });
+    mutate({ id: id, acao: event.target.checked ? "on" : "off" })
   }
 
 

@@ -3,19 +3,23 @@ import { APILigaDesligaDispositivo } from "../../api/APILigaDesliga"
 
 type Props = {
     onSuccess: () => void
+    onError: (data: Error) => void
 }
 
 type MutationProps = {
     id: string;
     acao: string
 }
-const usePostDispositivo = ({ onSuccess }: Props) => {
-    return useMutation({
-        onMutate(data: MutationProps) {
-            APILigaDesligaDispositivo({ id: data.id, acao: data.acao })
-        },
 
-        onSuccess
+async function changeStateDisp(data: MutationProps): Promise<any> {
+    const response = APILigaDesligaDispositivo({ id: data.id, acao: data.acao })
+    return response;
+}
+const usePostDispositivo = ({ onSuccess, onError }: Props) => {
+    return useMutation<void, Error, MutationProps>({
+        mutationFn: changeStateDisp,
+        onSuccess,
+        onError,
     })
 }
 
