@@ -59,10 +59,10 @@ const DashBoard = () => {
   };
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      navigate("/login");
-    }
+    // const token = localStorage.getItem("token");
+    // if (!token) {
+    //   navigate("/login");
+    // }
     calcularElementosIguais();
   }, []);
 
