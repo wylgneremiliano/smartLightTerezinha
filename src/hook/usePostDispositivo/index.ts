@@ -1,5 +1,5 @@
 import { useMutation } from "@tanstack/react-query"
-import { APILigaDesligaDispositivo } from "../../api/APILigaDesliga"
+import { APILigaDesligaDispositivo } from "../../APi/APILigaDesliga"
 
 type Props = {
     onSuccess: () => void

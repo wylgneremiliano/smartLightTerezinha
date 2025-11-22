@@ -2,7 +2,7 @@ import "./style.css";
 import imgClima from "../../../assets/dashboard/cloud.png";
 
 import { useEffect } from "react";
-import { ChamadaApi } from "../../../api/chamadaApiClima";
+import { ChamadaApi } from "../../../APi/chamadaApiClima";
 
 const ApiClimatologico = () => {
   const { dataApi, fecthApiClima } = ChamadaApi();

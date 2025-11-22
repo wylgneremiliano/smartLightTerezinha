@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { APILigaDesligaDispositivo } from "../../../../api/APILigaDesliga";
+import { APILigaDesligaDispositivo } from "../../../../APi/APILigaDesliga";
 import "./style.css";
 import { Switch } from "@mui/material";
 
@@ -16,14 +15,14 @@ export type PropsItens = {
 
 type Props = {
   listaItens: PropsItens[];
-  buscaItens: () => void;
+  
 
 }
 
-const Listing = ({ listaItens, buscaItens }: Props) => {
+const Listing = ({ listaItens }: Props) => {
 
   const handleChangeSwitch = async (event: React.ChangeEvent<HTMLInputElement>, id: string) => {
-    APILigaDesligaDispositivo({ acao: event.target.checked ? "on" : "off", id, buscaItens });
+    APILigaDesligaDispositivo({ acao: event.target.checked ? "on" : "off", id });
 
   }
 
