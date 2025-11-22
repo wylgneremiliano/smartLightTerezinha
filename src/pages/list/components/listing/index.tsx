@@ -1,8 +1,8 @@
+import { useQueryClient } from "@tanstack/react-query";
 import { APILigaDesligaDispositivo } from "../../../../APi/APILigaDesliga";
+import { usePostDispositivo } from "../../../../hook/usePostDispositivo";
 import "./style.css";
 import { Switch } from "@mui/material";
-
-
 
 export type PropsItens = {
   tipo: string;
@@ -15,18 +15,29 @@ export type PropsItens = {
 
 type Props = {
   listaItens: PropsItens[];
-  
-
-}
+};
 
 const Listing = ({ listaItens }: Props) => {
+  const queryClient = useQueryClient();
 
-  const handleChangeSwitch = async (event: React.ChangeEvent<HTMLInputElement>, id: string) => {
-    APILigaDesligaDispositivo({ acao: event.target.checked ? "on" : "off", id });
+  const { mutate } = usePostDispositivo({
+    onSuccess: () => {
+      setTimeout(
+        () => queryClient.invalidateQueries({ queryKey: ["dispositivos"] }),
+        500
+      );
+    },
+    onError: (data) => {
+      console.log(data.message);
+    },
+  });
 
-  }
-
-
+  const handleChangeSwitch = async (
+    event: React.ChangeEvent<HTMLInputElement>,
+    id: string
+  ) => {
+    mutate({ id: id, acao: event.target.checked ? "on" : "off" });
+  };
 
   return (
     <div className="list">
@@ -46,8 +57,11 @@ const Listing = ({ listaItens }: Props) => {
           <div className={`${item.status_conexao ? "green" : "gray"}`}>
             {item.status_conexao ? "Conectado" : "Desconectado"}
           </div>
-          <Switch color="success" checked={item.estado} onChange={(e) => handleChangeSwitch(e, item.id)} />
-
+          <Switch
+            color="success"
+            checked={item.estado}
+            onChange={(e) => handleChangeSwitch(e, item.id)}
+          />
         </div>
       ))}
     </div>

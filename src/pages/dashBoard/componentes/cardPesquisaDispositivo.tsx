@@ -23,8 +23,8 @@ const CardPesquisaDispositivo = ({ listaDispositivos }: props) => {
   }, [pesquisa, listaDispositivos]);
   return (
     <div className="cardPesquisaDispositivo">
-      <h3 className="cinzaDefault">Pesquisar dispositivo</h3>
-      <div className="inputPesquisa">
+      {/* <h3 className="cinzaDefault">Pesquisar dispositivo</h3> */}
+      {/* <div className="inputPesquisa">
         <button className="">
           <SearchIcon />
         </button>
@@ -35,7 +35,7 @@ const CardPesquisaDispositivo = ({ listaDispositivos }: props) => {
           type="text"
           placeholder="Digite o nome do dispositivo"
         />
-      </div>
+      </div> */}
       <div>
         {filtro?.map((item) => (
           <ItemPesquisa

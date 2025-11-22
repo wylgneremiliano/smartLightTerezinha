@@ -9,7 +9,7 @@ type Props = {
 export async function APILigaDesligaDispositivo({ acao, id }: Props) {
     try {
         const dataBruto = await axios.post(
-            `${URL_PATH}/devices/${id}/${acao}`
+            `${URL_PATH}/device/${id}/${acao}`
         );
         return dataBruto;
     } catch (err) {
