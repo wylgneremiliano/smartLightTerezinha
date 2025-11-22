@@ -12,10 +12,20 @@ const ApiClimatologico = () => {
   return (
     <div className="apiClimatologico flex flex-col items-center rounded-md">
       <div className="">
-        <h2>Lagoa Grande</h2>
-        <p className="text-[40px]">{dataApi.temp}°C</p>
-        <img width={80} src={imgClima} alt="" />
-        <p>{dataApi.description}</p>
+        {dataApi && (
+          <>
+            <h2>{dataApi.name}</h2>
+            <p className="text-[40px]">{dataApi.main.temp}°C</p>
+            <div className="iconeTexto"> 
+              <img
+                width={80}
+                src={`https://openweathermap.org/img/wn/${dataApi.weather[0].icon}@2x.png`}
+                alt=""
+              />
+              <p>{dataApi.weather[0].description}</p>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
