@@ -40,3 +40,49 @@
     color: #ACACAC;
     margin-left: 60px;
 }
+
+ .wrapper {
+            max-width: 1440px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #23272a;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            color: #ADADAD;
+        }
+
+        .title {
+            
+            
+            
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .text {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .list {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .list-item {
+            margin-bottom: 8px;
+            color: #ADADAD;
+        }
+
+        .footer {
+            margin-top: 35px;
+            padding-top: 15px;
+            border-top: 1px solid #444;
+            font-size: 0.95rem;
+            
+        }
+
+        .devs {
+            margin-top: 5px;
+            font-style: italic;
+        }
